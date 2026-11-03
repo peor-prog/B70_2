@@ -11,3 +11,9 @@ def articles_list(request: HttpRequest) -> HttpResponse:
         article = Article.objects.filter(id=i).first()
         text += f"{article.title} </h1><br><h1>"
     return HttpResponse(text)
+
+
+from django.http import HttpResponse
+
+def my_custom_view(request):
+    return HttpResponse("Моя кастомная вьюшка.")

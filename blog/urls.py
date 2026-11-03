@@ -24,3 +24,9 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", articles_list),
 ]
+
+from articles.views import my_custom_view  
+
+urlpatterns = [
+    path('my-page/', my_custom_view), 
+]
