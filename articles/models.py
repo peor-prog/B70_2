@@ -10,3 +10,12 @@ class Article(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+from django.db import models
+
+class Catalog(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name

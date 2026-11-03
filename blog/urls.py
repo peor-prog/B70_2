@@ -17,16 +17,16 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-
+from articles.views import my_custom_view  
 from articles.views import articles_list
+from .views import CatalogListView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", articles_list),
-]
-
-from articles.views import my_custom_view  
-
-urlpatterns = [
     path('my-page/', my_custom_view), 
+    path('catalog/', CatalogListView.as_view(), name='catalog-list'),
 ]
+
+
+

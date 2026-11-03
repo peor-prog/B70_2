@@ -17,3 +17,11 @@ from django.http import HttpResponse
 
 def my_custom_view(request):
     return HttpResponse("Моя кастомная вьюшка.")
+
+from django.views.generic import ListView
+from .models import Catalog
+
+class CatalogListView(ListView):
+    model = Catalog
+    template_name = 'catalog_list.html' 
+    context_object_name = 'catalogs'
